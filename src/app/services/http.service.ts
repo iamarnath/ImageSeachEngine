@@ -3,9 +3,10 @@ import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class HttpService {
-  private baseUrl = 'https://pixabay.com/api';
+  private baseUrl = environment.baseUrl;
   AUTH_TOKEN = 'auth_token';
 
   constructor(private httpClient: HttpClient) {}
