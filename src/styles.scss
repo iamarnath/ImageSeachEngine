@@ -1,1 +1,168 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.25rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    width: 100%;
+
+}
+
+.col-4 {
+    flex: 0 0 33.3333%;
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+[class*="col-"] {
+    margin: 0 0 10px 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.form-control {
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+}
+
+
+.card-item img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card-item {
+    padding: 10px;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 250px;
+    border-radius: 5px;
+    animation: fadeIn .2s linear;
+}
+
+.row-gap {
+    gap: 20px;
+}
+
+@media (max-width:450px) {
+    .card-item {
+        width: 100%;
+    }
+}
+
+
+
+.sshow {
+    display: block;
+}
+
+// this makes the element hidden/invisible
+.hhidden {
+    display: none;
+}
+
+// this holds the CSS display of the modal
+.mmodal {
+
+    position: fixed;
+    z-index: 5;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+}
+
+.mmodal-body {
+    background: #fff;
+    margin: 40px;
+    padding: 20px;
+}
+
+// backdrop color
+.mmodal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+    opacity: 0.95;
+}

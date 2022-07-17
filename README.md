@@ -1,10 +1,13 @@
-# ImageSeachEngine
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Basic application will be launched.
+Type the image you want to search in the text box shown in the application.
+Say you typed "yellow roses".
+All images related to yellow roses will be loaded.
+In case the images are more in number,user can scroll the page and view the other images.
+Infinite scroll feature is added in the application.
 
 ## Code scaffolding
 

@@ -1,0 +1,58 @@
+<div
+  class="search-results-container"
+  infinite-scroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScrollDown($event)"
+>
+  <div class="row row-gap">
+    <ng-container *ngIf="photosList.length > 0">
+      <ng-container *ngFor="let pic of photosList">
+        <div class="card card-item">
+          <img
+            [src]="pic.largeImageURL"
+            alt="Card image cap"
+            (click)="
+              showImageModel(
+                pic.largeImageURL,
+                pic.tags,
+                pic.likes,
+                pic.comments
+              )
+            "
+          />
+          <div class="card-body">
+            <h5>
+              <a href="{{ pic.pageURL }}" target="_blank">{{ pic.tags }} </a>
+            </h5>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <ng-container *ngIf="photosList.length === 0 && noResponse">
+    <h2 class="text-center">No Result Found.</h2>
+  </ng-container>
+</div>
+
+<!-- The Modal -->
+<ng-container #viewContainerRef></ng-container>
+<ng-template #imgPreviewModel>
+  <app-custom-modal id="imgPreviewModel" class="hhidden">
+    <span class="close" (click)="closeModel()">&times;</span>
+    <img
+      class="modal-content p-5"
+      id="imagePreview"
+      [src]="modelLargeImageURL"
+    />
+    <p class="modal-content p-5">
+      Tag: <strong>{{ captionRef }}</strong>
+    </p>
+    <p class="modal-content p-5">
+      Comments: <strong>{{ imgComments }}</strong>
+    </p>
+    <p class="modal-content p-5">
+      Likes: <strong>{{ imgLikes }}</strong>
+    </p>
+  </app-custom-modal>
+</ng-template>
