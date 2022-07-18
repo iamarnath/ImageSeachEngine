@@ -36,7 +36,12 @@ export class ImagesComponent implements OnInit, OnChanges {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {}
-
+  /**
+   * This is a ngOnChanges function which will trigger the api
+   *  call for searching images if any keyword is typed in search box.
+   * @author Amar nath
+   * @param {SimpleChanges} changes - contains currentValue,previousValue,firstchange of the searchQueryParam
+   */
   ngOnChanges(changes: SimpleChanges) {
     let currValue = changes['searchQueryParam']['currentValue'];
     let prevValue = changes['searchQueryParam']['previousValue'];
@@ -44,6 +49,12 @@ export class ImagesComponent implements OnInit, OnChanges {
       this.searchImage();
     }
   }
+  /**
+   * This is a searchImage function which will trigger the api
+   *  call for searching images if search button is clicked.
+   * @author Amar nath
+   * @param none
+   */
   searchImage() {
     this.page = 1;
     this.totalCount = 0;
@@ -51,6 +62,12 @@ export class ImagesComponent implements OnInit, OnChanges {
     this.photosList = [];
     this.getSearchedImageList();
   }
+  /**
+   * This is a getSearchedImageList function which will trigger the api
+   *  call getImageList from apiservice for searching images.
+   * @author Amar nath
+   * @param none
+   */
   getSearchedImageList() {
     this.noResponse = false;
     const params = {
@@ -70,9 +87,18 @@ export class ImagesComponent implements OnInit, OnChanges {
       },
       (error) => {
         this.noResponse = true;
+        alert("Server error.Please try again");
       }
     );
   }
+  /**
+   * This is a showImageModel function which will open the modal pop up when user clicks on any image.
+   * @author Amar nath
+   * @param {string} url - A string param  - url of image
+   * @param {string} tag - A string param  - tag associated with image
+   * @param {string} likes - A number param  - number of likes associated with image
+   * @param {string} comments - A number param  - number of comments associated with image
+   */
   showImageModel(url: string, tag: string, likes: number, comments: number) {
     this.modelLargeImageURL = url;
     this.captionRef = tag;
@@ -80,17 +106,32 @@ export class ImagesComponent implements OnInit, OnChanges {
     this.imgComments = comments;
     this.showDialog();
   }
+ /**
+   * This is a closeModel function which will close the opened modal.
+   * @author Amar nath
+   * @param  none
+   */
   closeModel() {
     this.viewContainerRef.clear();
   }
+   /**
+   * This is a onScrollDown function which will call the image api when user scrolls down the page.
+   * This is to implement infinite scroll.
+   * @author Amar nath
+   * @param  {any} ev - event contains currentScrollPosition while scrolling
+   */
   onScrollDown(ev: any) {
-    console.log(ev.currentScrollPosition);
     if (this.page < this.totalPageCall) {
       this.page++;
       this.getSearchedImageList();
     }
     this.direction = 'scroll down';
   }
+   /**
+   * This is a showDialog function which will show the modal when user clicks on any image.
+   * @author Amar nath
+   * @param none
+   */
   showDialog() {
     let view = this.imgPreviewModel.createEmbeddedView(null);
     this.viewContainerRef.insert(view);
