@@ -7,13 +7,13 @@ https://image-search-engine-pp2dp1455-iamarnath.vercel.app/search
 
 https://image-search-engine-git-main-iamarnath.vercel.app/search
 
-Type the image you want to search in the text box shown in the application. and then click `Enter` key or click on Search button
+Type the image you want to search in the text box shown in the application. and then click the `Enter` key or click on the Search button
 Say you typed "yellow roses".
 All images related to yellow roses will be loaded.
-In case the images are more in number,user can scroll the page and view the other images.
-Infinite scroll feature is added in the application.
-There is a clickable tag with each image.On Clicking of that tag,User will be able to open the page link of that particular image. 
-On clicking of any photo,a modal pop up will appear which will show the image and its details.
+In case the images are more in number, the user can scroll the page and view the other images.
+An infinite scroll feature is added to the application.
+There is a clickable tag with each image. On Clicking on that tag, the User will be able to open the page link of that particular image.
+On clicking on any photo, a modal pop-up will appear which will show the image and its details.
 
 ## Versions of node/npm and angular cli used in the application
 
@@ -45,13 +45,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Basic application will be launched.
 Image search application is deployed using vercel.Have integrated pixabay api to get list of images
 
-Type the image you want to search in the text box shown in the application. and then click `Enter` key or click on Search button
+Type the image you want to search in the text box shown in the application. and then click the `Enter` key or click on the Search button
 Say you typed "yellow roses".
 All images related to yellow roses will be loaded.
-In case the images are more in number,user can scroll the page and view the other images.
-Infinite scroll feature is added in the application.
-There is a clickable tag with each image.On Clicking of that tag,User will be able to open the page link of that particular image. 
-On clicking of any photo,a modal pop up will appear which will show the image and its details.
+In case the images are more in number, the user can scroll the page and view the other images.
+An infinite scroll feature is added to the application.
+There is a clickable tag with each image. On Clicking on that tag, the User will be able to open the page link of that particular image.
+On clicking on any photo, a modal pop-up will appear which will show the image and its details.
 
 
 
